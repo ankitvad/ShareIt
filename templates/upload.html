@@ -1,0 +1,66 @@
+{% macro pic_path(pic) %}
+	{{ url_for('return_pic', filename='%s' % pic) }}
+{% endmacro %}
+
+{% extends "base.html" %}
+{% block title %}
+Smart Image Sharing Platform
+{% endblock %}
+{% block content %}
+	{% if filename is defined %}
+		<div id="image"><a href="{{ pic_path(filename) }}" target="_blank"><img class="new" src="{{ pic_path(filename) }}"></a><center>
+			<script>
+function doIt()
+{
+var jobValue = document.getElementById('comment').value
+var newUrl="http://localhost:5000/hello?filename={{ filename }}&comment="+jobValue
+window.open(newUrl)
+}
+
+function lrating()
+{
+var newUrl="http://localhost:5000/rating?filename={{ filename }}&r=l"
+window.open(newUrl)
+}
+
+function drating()
+{
+var newUrl="http://localhost:5000/rating?filename={{ filename }}&r=d"
+window.open(newUrl)
+}
+</script>
+<font size="5" color="lightblue">( {{caption}} )</font><br><br>
+			<table>
+  <tr>
+    <td><font size="5" color="lightblue">{{rating[0]}}</font></td>
+    <td></td>
+    <td><font size="5" color="lightblue">{{rating[1]}}</font></td>
+  </tr><tr></tr>
+  <tr>
+    <td><font size="4" color="white"><a href="#" onclick="lrating();">Likes</a></font></td>
+    <td></td>
+    <td><font size="4" color="white"><a href="#" onclick="drating();">Dislikes</a></font></td>
+  </tr>
+</table></center><font color="white">
+<hr>
+			<h1>Comments:</h1>
+			<ol>
+			{% for comment in comments %}
+			<div class="boxed">
+				<li><p>{{ comment }}</p></li>
+				</div><br>
+			{% endfor %}
+			</ol></font>
+<textarea name="comment" id="comment" placeholder="Enter your comment here." rows="4" cols="50"></textarea><br>
+<a href="#" onclick="doIt();">Submit</a>
+</div>
+		
+
+	{% else %}
+		<ul>
+		{% for pic in pics %}
+			<li class="thumb"><a href="{{ url_for('show_pic', filename=pic) }}"><img class="thumb" src="{{ pic_path('thumb_'+pic) }}"></a></li>
+		{% endfor %}
+		</ul>
+	{% endif %}		    
+{% endblock %}
