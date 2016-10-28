@@ -7,9 +7,8 @@ Smart image sharing platform with Nudity detection using image processing and Im
 <pre><code>~$ pip --version</code></pre>
 Should return version or <code>"bash: pip: command not found"</code><br>
 If command not found, install pip:<pre><code>
-~$ curl -O http://peak.telecommunity.com/dist/ez_setup.py
-~$ sudo python ez_setup.py
-~$ sudo easy_install pip
+~$ curl -O https://bootstrap.pypa.io/get-pip.py
+~$ sudo python get-pip.py
 </code></pre></li>
 <li>Install Virtualenv so that we have an isolated environment for our project.
 <pre><code>~$ sudo pip install virtualenv</code></pre></li>
