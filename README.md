@@ -1,9 +1,9 @@
 # ShareIt
 Smart image sharing platform with Nudity detection using image processing and Image caption generation and similarity ranking using Deep Learning.
 <hr><br>
-<h3>Project Installation</h3>
+<h3>Project Installation:</h3>
 <ol>
-<li>Check if "pip" is installed in your system
+<li>Check if "pip" is installed on your system:
 <pre><code>~$ pip --version</code></pre>
 Should return version or <code>"bash: pip: command not found"</code><br>
 If command not found, install pip:<pre><code>
