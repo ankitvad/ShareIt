@@ -1,6 +1,7 @@
 # ShareIt
 Smart image sharing platform with Nudity detection using image processing and Image caption generation and similarity ranking using Deep Learning.<br>
-Note: Some Python library used are pretty outdated and as a result might pose certain security risk.
+Note: Some Python library used are pretty outdated and as a result might pose certain security risk.  
+Further confirm the image processing algorithm.
 <hr><br>
 <h3>Project Installation:</h3>
 <ol>
